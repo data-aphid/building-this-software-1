@@ -40,7 +40,9 @@ export default function Properties() {
     mutationFn: async (values: z.infer<typeof schema>) => {
       const { data: u } = await supabase.auth.getUser();
       const { error } = await supabase.from("properties").insert({
-        ...values,
+        name: values.name,
+        address: values.address,
+        description: values.description,
         created_by: u.user?.id,
       });
       if (error) throw error;

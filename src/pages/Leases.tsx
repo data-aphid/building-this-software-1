@@ -62,10 +62,16 @@ export default function Leases() {
 
   const createMut = useMutation({
     mutationFn: async (values: z.infer<typeof schema>) => {
-      const payload = { ...values, end_date: values.end_date || null };
-      const { error } = await supabase.from("leases").insert(payload);
+      const { error } = await supabase.from("leases").insert({
+        tenant_id: values.tenant_id,
+        unit_id: values.unit_id,
+        start_date: values.start_date,
+        end_date: values.end_date || null,
+        rent_amount: values.rent_amount,
+        deposit_amount: values.deposit_amount,
+        deposit_paid: values.deposit_paid,
+      });
       if (error) throw error;
-      // mark unit occupied
       await supabase.from("units").update({ status: "occupied" }).eq("id", values.unit_id);
     },
     onSuccess: () => {

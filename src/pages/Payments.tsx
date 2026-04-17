@@ -63,7 +63,12 @@ export default function Payments() {
     mutationFn: async (values: z.infer<typeof schema>) => {
       const { data: u } = await supabase.auth.getUser();
       const { error } = await supabase.from("payments").insert({
-        ...values,
+        lease_id: values.lease_id,
+        amount: values.amount,
+        paid_on: values.paid_on,
+        method: values.method,
+        reference: values.reference,
+        notes: values.notes,
         recorded_by: u.user?.id,
       });
       if (error) throw error;

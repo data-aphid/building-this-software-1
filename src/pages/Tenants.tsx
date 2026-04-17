@@ -40,8 +40,15 @@ export default function Tenants() {
 
   const createMut = useMutation({
     mutationFn: async (values: z.infer<typeof schema>) => {
-      const payload = { ...values, email: values.email || null };
-      const { error } = await supabase.from("tenants").insert(payload);
+      const { error } = await supabase.from("tenants").insert({
+        full_name: values.full_name,
+        national_id: values.national_id,
+        phone: values.phone,
+        email: values.email || null,
+        next_of_kin_name: values.next_of_kin_name,
+        next_of_kin_phone: values.next_of_kin_phone,
+        notes: values.notes,
+      });
       if (error) throw error;
     },
     onSuccess: () => {

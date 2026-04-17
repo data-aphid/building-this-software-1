@@ -71,7 +71,13 @@ export default function PropertyDetail() {
 
   const createMut = useMutation({
     mutationFn: async (values: z.infer<typeof schema>) => {
-      const { error } = await supabase.from("units").insert({ ...values, property_id: id! });
+      const { error } = await supabase.from("units").insert({
+        property_id: id!,
+        name: values.name,
+        unit_type: values.unit_type,
+        rent_amount: values.rent_amount,
+        deposit_amount: values.deposit_amount,
+      });
       if (error) throw error;
     },
     onSuccess: () => {
