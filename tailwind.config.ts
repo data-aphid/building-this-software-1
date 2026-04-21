@@ -69,8 +69,12 @@ export default {
           "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
-        },
-      },
+          },
+          workspace: {
+            DEFAULT: "hsl(var(--workspace-panel))",
+            foreground: "hsl(var(--workspace-panel-foreground))",
+            border: "hsl(var(--workspace-panel-border))",
+          },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 4px)",
