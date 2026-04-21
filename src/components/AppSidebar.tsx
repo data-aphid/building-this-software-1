@@ -61,7 +61,11 @@ export function AppSidebar() {
             <SidebarMenu>
               {visible.map((item) => (
                 <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild isActive={location.pathname === item.url}>
+                  <SidebarMenuButton
+                    asChild
+                    isActive={location.pathname === item.url}
+                    className="text-workspace-foreground hover:bg-workspace-border/55 hover:text-workspace-foreground data-[active=true]:border data-[active=true]:border-workspace-border data-[active=true]:bg-background data-[active=true]:text-workspace-foreground data-[active=true]:shadow-soft"
+                  >
                     <NavLink to={item.url} end>
                       <item.icon className="h-4 w-4" />
                       {!collapsed && <span className="font-medium text-workspace-foreground">{item.title}</span>}
