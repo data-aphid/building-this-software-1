@@ -43,8 +43,8 @@ export function AppSidebar() {
           </div>
           {!collapsed && (
             <div className="flex flex-col leading-tight">
-              <span className="font-display text-lg font-semibold text-sidebar-foreground">NyumbaFlow</span>
-              <span className="text-[10px] font-medium uppercase tracking-wider text-sidebar-foreground/75">Property Management</span>
+              <span className="font-display text-lg font-semibold text-workspace-foreground">NyumbaFlow</span>
+              <span className="text-[10px] font-medium uppercase tracking-wider text-workspace-foreground/75">Property Management</span>
             </div>
           )}
         </div>
