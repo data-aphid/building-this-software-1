@@ -1,12 +1,23 @@
 import { useQuery } from "@tanstack/react-query";
+import { Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { PageHeader } from "@/components/PageHeader";
 import { StatCard } from "@/components/StatCard";
-import { Building2, Home, Wallet, AlertCircle, TrendingUp } from "lucide-react";
+import { Building2, Home, Wallet, AlertCircle, TrendingUp, Users, FileText, UserCog, Settings, LayoutDashboard } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { KES, formatDate } from "@/lib/format";
 import { Badge } from "@/components/ui/badge";
 import { useAuth } from "@/contexts/AuthContext";
+
+const quickLinks = [
+  { title: "Dashboard", url: "/", icon: LayoutDashboard },
+  { title: "Properties", url: "/properties", icon: Building2 },
+  { title: "Tenants", url: "/tenants", icon: Users },
+  { title: "Leases", url: "/leases", icon: FileText },
+  { title: "Payments", url: "/payments", icon: Wallet },
+  { title: "Team", url: "/team", icon: UserCog },
+  { title: "Settings", url: "/settings", icon: Settings },
+];
 
 export default function Dashboard() {
   const { user } = useAuth();
