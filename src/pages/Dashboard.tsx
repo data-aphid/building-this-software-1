@@ -1,12 +1,23 @@
 import { useQuery } from "@tanstack/react-query";
+import { Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { PageHeader } from "@/components/PageHeader";
 import { StatCard } from "@/components/StatCard";
-import { Building2, Home, Wallet, AlertCircle, TrendingUp } from "lucide-react";
+import { Building2, Home, Wallet, AlertCircle, TrendingUp, Users, FileText, UserCog, Settings, LayoutDashboard } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { KES, formatDate } from "@/lib/format";
 import { Badge } from "@/components/ui/badge";
 import { useAuth } from "@/contexts/AuthContext";
+
+const quickLinks = [
+  { title: "Dashboard", url: "/", icon: LayoutDashboard },
+  { title: "Properties", url: "/properties", icon: Building2 },
+  { title: "Tenants", url: "/tenants", icon: Users },
+  { title: "Leases", url: "/leases", icon: FileText },
+  { title: "Payments", url: "/payments", icon: Wallet },
+  { title: "Team", url: "/team", icon: UserCog },
+  { title: "Settings", url: "/settings", icon: Settings },
+];
 
 export default function Dashboard() {
   const { user } = useAuth();
@@ -69,27 +80,49 @@ export default function Dashboard() {
         description={`Here's what's happening across your properties${user?.email ? "" : ""}.`}
       />
 
+      {/* Quick links to all sections */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-2 sm:gap-3 mb-6">
+        {quickLinks.map((l) => (
+          <Link
+            key={l.title}
+            to={l.url}
+            className="group flex flex-col items-center justify-center gap-2 rounded-lg border border-black/10 bg-white text-black px-3 py-4 font-semibold shadow-card hover:bg-black hover:text-white transition-colors"
+          >
+            <l.icon className="h-5 w-5" />
+            <span className="text-sm">{l.title}</span>
+          </Link>
+        ))}
+      </div>
+
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-8">
-        <StatCard label="Properties" value={isLoading ? "—" : data?.propertyCount ?? 0} icon={Building2} tone="primary" />
-        <StatCard
-          label="Occupancy"
-          value={isLoading ? "—" : `${data?.occupancyPct ?? 0}%`}
-          hint={isLoading ? undefined : `${data?.occupied}/${data?.totalUnits} units`}
-          icon={Home}
-          tone="secondary"
-        />
-        <StatCard
-          label="Expected (mo)"
-          value={isLoading ? "—" : KES(data?.expectedMonthly ?? 0)}
-          icon={TrendingUp}
-          tone="success"
-        />
-        <StatCard
-          label="Collected (mo)"
-          value={isLoading ? "—" : KES(data?.collectedThisMonth ?? 0)}
-          icon={Wallet}
-          tone="primary"
-        />
+        <Link to="/properties" className="block focus:outline-none focus:ring-2 focus:ring-ring rounded-xl">
+          <StatCard label="Properties" value={isLoading ? "—" : data?.propertyCount ?? 0} icon={Building2} tone="primary" />
+        </Link>
+        <Link to="/properties" className="block focus:outline-none focus:ring-2 focus:ring-ring rounded-xl">
+          <StatCard
+            label="Occupancy"
+            value={isLoading ? "—" : `${data?.occupancyPct ?? 0}%`}
+            hint={isLoading ? undefined : `${data?.occupied}/${data?.totalUnits} units`}
+            icon={Home}
+            tone="secondary"
+          />
+        </Link>
+        <Link to="/leases" className="block focus:outline-none focus:ring-2 focus:ring-ring rounded-xl">
+          <StatCard
+            label="Expected (mo)"
+            value={isLoading ? "—" : KES(data?.expectedMonthly ?? 0)}
+            icon={TrendingUp}
+            tone="success"
+          />
+        </Link>
+        <Link to="/payments" className="block focus:outline-none focus:ring-2 focus:ring-ring rounded-xl">
+          <StatCard
+            label="Collected (mo)"
+            value={isLoading ? "—" : KES(data?.collectedThisMonth ?? 0)}
+            icon={Wallet}
+            tone="primary"
+          />
+        </Link>
       </div>
 
       <div className="grid lg:grid-cols-2 gap-4 sm:gap-6">
