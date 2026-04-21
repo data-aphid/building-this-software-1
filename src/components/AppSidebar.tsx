@@ -44,7 +44,7 @@ export function AppSidebar() {
           {!collapsed && (
             <div className="flex flex-col leading-tight">
               <span className="font-display text-lg font-semibold text-sidebar-foreground">NyumbaFlow</span>
-              <span className="text-[10px] uppercase tracking-wider text-sidebar-foreground/60">Property Management</span>
+              <span className="text-[10px] font-medium uppercase tracking-wider text-sidebar-foreground/75">Property Management</span>
             </div>
           )}
         </div>
@@ -72,7 +72,7 @@ export function AppSidebar() {
 
       <SidebarFooter className="border-t border-sidebar-border">
         {!collapsed && (
-          <div className="px-2 py-2 text-xs text-sidebar-foreground/70 truncate">
+          <div className="px-2 py-2 text-xs font-medium text-sidebar-foreground/85 truncate">
             {user?.email}
           </div>
         )}
