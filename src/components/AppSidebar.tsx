@@ -51,9 +51,9 @@ export function AppSidebar() {
       </SidebarHeader>
 
       <SidebarContent className="px-2 py-3">
-        <SidebarGroup className="rounded-md border border-sidebar-border bg-sidebar-accent/35 px-2 py-3">
+        <SidebarGroup className="rounded-md border border-workspace-border bg-workspace text-workspace-foreground px-2 py-3 shadow-sm">
           {!collapsed && (
-            <SidebarGroupLabel className="px-2 pb-2 text-sidebar-foreground font-semibold text-xs uppercase tracking-wider">
+            <SidebarGroupLabel className="px-2 pb-2 text-workspace-foreground font-semibold text-xs uppercase tracking-wider">
               Workspace
             </SidebarGroupLabel>
           )}
@@ -64,7 +64,7 @@ export function AppSidebar() {
                   <SidebarMenuButton asChild isActive={location.pathname === item.url}>
                     <NavLink to={item.url} end>
                       <item.icon className="h-4 w-4" />
-                      {!collapsed && <span className="font-medium text-sidebar-foreground">{item.title}</span>}
+                      {!collapsed && <span className="font-medium text-workspace-foreground">{item.title}</span>}
                     </NavLink>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
