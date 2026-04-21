@@ -52,7 +52,11 @@ export function AppSidebar() {
 
       <SidebarContent>
         <SidebarGroup>
-          {!collapsed && <SidebarGroupLabel>Workspace</SidebarGroupLabel>}
+          {!collapsed && (
+            <SidebarGroupLabel className="text-sidebar-foreground/90 font-semibold text-xs uppercase tracking-wider">
+              Workspace
+            </SidebarGroupLabel>
+          )}
           <SidebarGroupContent>
             <SidebarMenu>
               {visible.map((item) => (
@@ -60,7 +64,7 @@ export function AppSidebar() {
                   <SidebarMenuButton asChild isActive={location.pathname === item.url}>
                     <NavLink to={item.url} end>
                       <item.icon className="h-4 w-4" />
-                      {!collapsed && <span>{item.title}</span>}
+                      {!collapsed && <span className="font-medium text-sidebar-foreground">{item.title}</span>}
                     </NavLink>
                   </SidebarMenuButton>
                 </SidebarMenuItem>

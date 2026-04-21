@@ -64,12 +64,12 @@
 
     /* Sidebar — light & airy with strong contrast */
     --sidebar-background: 38 45% 97%;
-    --sidebar-foreground: 25 30% 18%;
-    --sidebar-primary: 12 55% 45%;
+    --sidebar-foreground: 25 35% 12%;
+    --sidebar-primary: 12 60% 42%;
     --sidebar-primary-foreground: 38 50% 98%;
-    --sidebar-accent: 14 60% 88%;
-    --sidebar-accent-foreground: 12 70% 28%;
-    --sidebar-border: 30 20% 82%;
+    --sidebar-accent: 14 65% 86%;
+    --sidebar-accent-foreground: 12 75% 25%;
+    --sidebar-border: 30 20% 80%;
     --sidebar-ring: 12 55% 51%;
   }
 
