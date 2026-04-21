@@ -29,10 +29,10 @@ export function TopNav() {
 
   const linkClass = ({ isActive }: { isActive: boolean }) =>
     cn(
-      "inline-flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium transition-colors whitespace-nowrap",
+      "inline-flex items-center gap-2 px-3 py-2 rounded-md text-sm font-semibold transition-colors whitespace-nowrap border",
       isActive
-        ? "bg-primary text-primary-foreground shadow-soft"
-        : "text-foreground/80 hover:bg-muted hover:text-foreground"
+        ? "bg-black text-white border-black"
+        : "bg-white text-black border-black/10 hover:bg-black hover:text-white"
     );
 
   return (
