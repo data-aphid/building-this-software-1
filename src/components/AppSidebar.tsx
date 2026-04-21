@@ -50,10 +50,10 @@ export function AppSidebar() {
         </div>
       </SidebarHeader>
 
-      <SidebarContent>
-        <SidebarGroup>
+      <SidebarContent className="px-2 py-3">
+        <SidebarGroup className="rounded-md border border-sidebar-border bg-sidebar-accent/35 px-2 py-3">
           {!collapsed && (
-            <SidebarGroupLabel className="text-sidebar-foreground/90 font-semibold text-xs uppercase tracking-wider">
+            <SidebarGroupLabel className="px-2 pb-2 text-sidebar-foreground font-semibold text-xs uppercase tracking-wider">
               Workspace
             </SidebarGroupLabel>
           )}
