@@ -35,8 +35,8 @@ export function AppSidebar() {
   const visible = navItems.filter((item) => item.roles.some((r) => roles.includes(r as never)));
 
   return (
-    <Sidebar collapsible="icon">
-      <SidebarHeader className="border-b border-sidebar-border">
+    <Sidebar collapsible="icon" className="bg-workspace text-workspace-foreground border-r border-workspace-border">
+      <SidebarHeader className="bg-workspace border-b border-workspace-border">
         <div className="flex items-center gap-2 px-2 py-3">
           <div className="h-9 w-9 rounded-lg bg-gradient-warm flex items-center justify-center shrink-0 shadow-warm">
             <Building2 className="h-5 w-5 text-primary-foreground" />
@@ -50,8 +50,8 @@ export function AppSidebar() {
         </div>
       </SidebarHeader>
 
-      <SidebarContent className="px-2 py-3">
-        <SidebarGroup className="rounded-md border border-workspace-border bg-workspace text-workspace-foreground px-2 py-3 shadow-sm">
+      <SidebarContent className="bg-workspace text-workspace-foreground px-2 py-3">
+        <SidebarGroup className="px-2 py-2">
           {!collapsed && (
             <SidebarGroupLabel className="px-2 pb-2 text-workspace-foreground font-semibold text-xs uppercase tracking-wider">
               Workspace
@@ -74,9 +74,9 @@ export function AppSidebar() {
         </SidebarGroup>
       </SidebarContent>
 
-      <SidebarFooter className="border-t border-sidebar-border">
+      <SidebarFooter className="bg-workspace text-workspace-foreground border-t border-workspace-border">
         {!collapsed && (
-          <div className="px-2 py-2 text-xs font-medium text-sidebar-foreground/85 truncate">
+          <div className="px-2 py-2 text-xs font-medium text-workspace-foreground/85 truncate">
             {user?.email}
           </div>
         )}
@@ -84,7 +84,7 @@ export function AppSidebar() {
           variant="ghost"
           size="sm"
           onClick={() => signOut()}
-          className="justify-start text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
+          className="justify-start text-workspace-foreground hover:bg-workspace-border/40 hover:text-workspace-foreground"
         >
           <LogOut className="h-4 w-4" />
           {!collapsed && <span className="ml-2">Sign out</span>}
