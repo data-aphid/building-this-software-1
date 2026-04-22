@@ -35,40 +35,32 @@ export function AppSidebar() {
   const visible = navItems.filter((item) => item.roles.some((r) => roles.includes(r as never)));
 
   return (
-    <Sidebar collapsible="icon" className="bg-workspace text-workspace-foreground border-r border-workspace-border">
-      <SidebarHeader className="bg-workspace border-b border-workspace-border">
+    <Sidebar collapsible="icon">
+      <SidebarHeader className="border-b border-sidebar-border">
         <div className="flex items-center gap-2 px-2 py-3">
           <div className="h-9 w-9 rounded-lg bg-gradient-warm flex items-center justify-center shrink-0 shadow-warm">
             <Building2 className="h-5 w-5 text-primary-foreground" />
           </div>
           {!collapsed && (
             <div className="flex flex-col leading-tight">
-              <span className="font-display text-lg font-semibold text-workspace-foreground">NyumbaFlow</span>
-              <span className="text-[10px] font-medium uppercase tracking-wider text-workspace-foreground/75">Property Management</span>
+              <span className="font-display text-lg font-semibold text-sidebar-foreground">NyumbaFlow</span>
+              <span className="text-[10px] uppercase tracking-wider text-sidebar-foreground/60">Property Management</span>
             </div>
           )}
         </div>
       </SidebarHeader>
 
-      <SidebarContent className="bg-workspace text-workspace-foreground px-2 py-3">
-        <SidebarGroup className="px-2 py-2">
-          {!collapsed && (
-            <SidebarGroupLabel className="px-2 pb-2 text-workspace-foreground font-semibold text-xs uppercase tracking-wider">
-              Workspace
-            </SidebarGroupLabel>
-          )}
+      <SidebarContent>
+        <SidebarGroup>
+          {!collapsed && <SidebarGroupLabel>Workspace</SidebarGroupLabel>}
           <SidebarGroupContent>
             <SidebarMenu>
               {visible.map((item) => (
                 <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton
-                    asChild
-                    isActive={location.pathname === item.url}
-                    className="text-workspace-foreground hover:bg-workspace-border/55 hover:text-workspace-foreground data-[active=true]:border data-[active=true]:border-workspace-border data-[active=true]:bg-background data-[active=true]:text-workspace-foreground data-[active=true]:shadow-soft"
-                  >
+                  <SidebarMenuButton asChild isActive={location.pathname === item.url}>
                     <NavLink to={item.url} end>
                       <item.icon className="h-4 w-4" />
-                      {!collapsed && <span className="font-medium text-workspace-foreground">{item.title}</span>}
+                      {!collapsed && <span>{item.title}</span>}
                     </NavLink>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
@@ -78,9 +70,9 @@ export function AppSidebar() {
         </SidebarGroup>
       </SidebarContent>
 
-      <SidebarFooter className="bg-workspace text-workspace-foreground border-t border-workspace-border">
+      <SidebarFooter className="border-t border-sidebar-border">
         {!collapsed && (
-          <div className="px-2 py-2 text-xs font-medium text-workspace-foreground/85 truncate">
+          <div className="px-2 py-2 text-xs text-sidebar-foreground/70 truncate">
             {user?.email}
           </div>
         )}
@@ -88,7 +80,7 @@ export function AppSidebar() {
           variant="ghost"
           size="sm"
           onClick={() => signOut()}
-          className="justify-start text-workspace-foreground hover:bg-workspace-border/40 hover:text-workspace-foreground"
+          className="justify-start text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
         >
           <LogOut className="h-4 w-4" />
           {!collapsed && <span className="ml-2">Sign out</span>}

@@ -62,18 +62,15 @@
     --shadow-warm: 0 8px 30px -8px hsl(12 55% 51% / 0.25);
     --shadow-card: 0 1px 3px hsl(25 30% 25% / 0.04), 0 4px 16px -6px hsl(25 30% 25% / 0.06);
 
-    /* Sidebar — light & airy with strong contrast */
-    --sidebar-background: 38 45% 97%;
-    --sidebar-foreground: 25 35% 12%;
-    --sidebar-primary: 12 60% 42%;
+    /* Sidebar */
+    --sidebar-background: 158 32% 16%;
+    --sidebar-foreground: 38 40% 92%;
+    --sidebar-primary: 12 55% 51%;
     --sidebar-primary-foreground: 38 50% 98%;
-    --sidebar-accent: 14 65% 86%;
-    --sidebar-accent-foreground: 12 75% 25%;
-    --sidebar-border: 30 20% 80%;
+    --sidebar-accent: 158 30% 22%;
+    --sidebar-accent-foreground: 38 40% 95%;
+    --sidebar-border: 158 25% 22%;
     --sidebar-ring: 12 55% 51%;
-    --workspace-panel: 38 52% 94%;
-    --workspace-panel-foreground: 25 35% 12%;
-    --workspace-panel-border: 30 24% 78%;
   }
 
   .dark {
@@ -103,17 +100,14 @@
     --border: 25 15% 22%;
     --input: 25 15% 22%;
     --ring: 14 65% 58%;
-    --sidebar-background: 25 20% 10%;
-    --sidebar-foreground: 38 45% 95%;
-    --sidebar-primary: 14 70% 62%;
-    --sidebar-primary-foreground: 25 25% 8%;
-    --sidebar-accent: 25 18% 18%;
-    --sidebar-accent-foreground: 14 70% 75%;
-    --sidebar-border: 25 15% 22%;
-    --sidebar-ring: 14 70% 62%;
-    --workspace-panel: 38 52% 94%;
-    --workspace-panel-foreground: 25 35% 12%;
-    --workspace-panel-border: 30 24% 78%;
+    --sidebar-background: 25 20% 8%;
+    --sidebar-foreground: 38 40% 92%;
+    --sidebar-primary: 14 65% 58%;
+    --sidebar-primary-foreground: 25 25% 10%;
+    --sidebar-accent: 25 15% 14%;
+    --sidebar-accent-foreground: 38 40% 92%;
+    --sidebar-border: 25 15% 18%;
+    --sidebar-ring: 14 65% 58%;
   }
 }
 

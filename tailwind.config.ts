@@ -1,6 +1,6 @@
 import type { Config } from "tailwindcss";
 
-const config: Config = {
+export default {
   darkMode: ["class"],
   content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
   prefix: "",
@@ -12,8 +12,8 @@ const config: Config = {
     },
     extend: {
       fontFamily: {
-        display: ["Fraunces", "Georgia", "serif"],
-        sans: ["DM Sans", "system-ui", "sans-serif"],
+        display: ['Fraunces', 'Georgia', 'serif'],
+        sans: ['DM Sans', 'system-ui', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -70,11 +70,6 @@ const config: Config = {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        workspace: {
-          DEFAULT: "hsl(var(--workspace-panel))",
-          foreground: "hsl(var(--workspace-panel-foreground))",
-          border: "hsl(var(--workspace-panel-border))",
-        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -94,6 +89,4 @@ const config: Config = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-};
-
-export default config;
+} satisfies Config;
