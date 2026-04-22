@@ -11,31 +11,31 @@
 
 @layer base {
   :root {
-    /* Surfaces */
-    --background: 38 40% 96%;          /* warm cream */
-    --foreground: 25 25% 15%;          /* soft charcoal */
+    /* Surfaces — clean & airy */
+    --background: 40 30% 99%;          /* near-white warm */
+    --foreground: 25 20% 18%;          /* soft charcoal */
 
-    --card: 38 50% 98%;
-    --card-foreground: 25 25% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 25 20% 18%;
 
-    --popover: 38 50% 98%;
-    --popover-foreground: 25 25% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 25 20% 18%;
 
     /* Brand */
-    --primary: 12 55% 51%;             /* terracotta */
-    --primary-foreground: 38 50% 98%;
-    --primary-soft: 14 60% 92%;
-    --primary-glow: 18 75% 65%;
+    --primary: 12 60% 53%;             /* terracotta */
+    --primary-foreground: 0 0% 100%;
+    --primary-soft: 14 70% 95%;
+    --primary-glow: 18 80% 68%;
 
-    --secondary: 158 32% 28%;          /* deep forest */
-    --secondary-foreground: 38 50% 98%;
-    --secondary-soft: 158 25% 90%;
+    --secondary: 158 32% 30%;          /* deep forest */
+    --secondary-foreground: 0 0% 100%;
+    --secondary-soft: 158 25% 94%;
 
-    --muted: 36 25% 90%;
-    --muted-foreground: 25 15% 40%;
+    --muted: 36 20% 95%;
+    --muted-foreground: 25 12% 45%;
 
-    --accent: 36 60% 88%;              /* sand */
-    --accent-foreground: 25 25% 15%;
+    --accent: 36 50% 93%;              /* sand */
+    --accent-foreground: 25 20% 18%;
 
     --destructive: 0 70% 48%;
     --destructive-foreground: 38 50% 98%;
@@ -46,9 +46,9 @@
     --warning: 35 90% 50%;
     --warning-foreground: 25 30% 15%;
 
-    --border: 30 20% 85%;
-    --input: 30 20% 85%;
-    --ring: 12 55% 51%;
+    --border: 30 15% 90%;
+    --input: 30 15% 90%;
+    --ring: 12 60% 53%;
 
     --radius: 0.85rem;
 
